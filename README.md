@@ -1,4 +1,4 @@
-# Real Estate Notifier w/ Discord
+# Real Estate Notifier w/ Discord (Work in Progress)
 
 Building a Real Estate Notifier that scrapes websites and presents results through a react frontend which communicates with a flask server hooked up to a postgresql db. 
 
