@@ -61,6 +61,10 @@ For outputs from react, see the developer console, and the network tab to get an
 
 The app currently is just for playing around with the communications between the different tiers. You can post and get which will communciate with flask, which will subsequently communicate with postgresql to then execute the respective commands.
 
+Can enter the docker container with the command
+
+     docker exec -it [container id] sh (docker exec -it client sh)
+
 ### Flask (API side)
 
 In the terminal that you ran

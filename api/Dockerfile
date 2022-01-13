@@ -29,5 +29,6 @@ COPY requirements.txt /backend/requirements.txt
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
+RUN python3 -m pip install --upgrade requests
 
 COPY . .

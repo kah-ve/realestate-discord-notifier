@@ -3,6 +3,8 @@ import "./HomeData.css";
 import { ImHome } from "react-icons/im";
 
 class HomeData extends React.Component {
+  keyCount = 0
+
   constructor(props) {
     super(props);
 
@@ -15,7 +17,8 @@ class HomeData extends React.Component {
     this.getResponse = this.getResponse.bind(this);
     this.getLinkRows = this.getLinkRows.bind(this);
     this.searchZipCode = this.searchZipCode.bind(this);
-    this.handleZipCodeChange = this.handleZipCodeChange.bind(this)
+    this.handleZipCodeChange = this.handleZipCodeChange.bind(this);
+    this.getKey = this.getKey.bind(this);
   }
 
   async getResponse() {
@@ -42,11 +45,16 @@ class HomeData extends React.Component {
     }
   }
 
+
+  getKey() {
+    return this.keyCount++;
+  }
+
   getLinkRows() {
     let homeLinks = []
     for (let i=0; i < this.state.response.length; i++) {
       let [url, home_address, img_link] = this.state.response[i]
-      homeLinks.push(<span className="home-links">
+      homeLinks.push(<span key={this.getKey()} className="home-links">
         {img_link !== "" ? (<img className="home-preview" src={img_link}></img>) : (<span className="home-preview-icon"><ImHome /></span>)}
         <a href={url} target="_blank" className="home-href">{home_address}</a></span>)
     }
@@ -81,6 +89,8 @@ class HomeData extends React.Component {
       "zipcode": value
     })
   }
+
+
 
   render() {
     return (

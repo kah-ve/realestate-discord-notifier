@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, make_response, request
+from flask import Flask, jsonify, make_response, request, redirect
 from flask_cors import CORS, cross_origin
 import json
 from Database import Database as db
@@ -53,6 +53,11 @@ def get_data():
     # output = make_response(jsonify(output))
     output = jsonify(output)
     return output
+
+
+# @app.route("/")
+# def hello():
+#     return redirect("http://www.localhost.com:3000")
 
 
 @app.errorhandler(404)
