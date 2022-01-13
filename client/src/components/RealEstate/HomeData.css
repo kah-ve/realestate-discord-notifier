@@ -1,0 +1,71 @@
+
+.get-homes-container {
+    background-color: #437a97;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: left;
+    border: 2px solid #4c97c0;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 950px;
+    font-weight: bold;
+    font-size: larger;
+    word-wrap: break-word;    
+}
+  
+.get-homes-container:hover {
+    background-color: #dfdddd;
+    color: #437a97;
+}
+
+.home-links {
+    background-color: #ffffff;
+    color: black;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 440px;
+    max-width: 440px;
+    display: flex;
+    align-items: center;
+}
+
+.home-links:hover {
+    transform: scale(1.02);
+}
+
+.home-href {
+    text-decoration: none;
+    color: inherit;
+}
+
+.home-preview {
+    /* width: 100px; */
+    /* height: 100px; */
+    width: 30%;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.home-preview-icon {
+    background-color: rgb(201, 201, 201);
+    font-size: 70px;
+    width: 132px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.zipcode-search-and-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
