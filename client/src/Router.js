@@ -14,7 +14,7 @@ function MyRouter() {
       <Routes>
         <Route path="/" exact element={<FrontPage />} />
         <Route
-        path="*"
+        path="/*"
         element={<Navigate to="/" />}
     />
       </Routes>

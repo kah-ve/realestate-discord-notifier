@@ -54,9 +54,9 @@ class HomeData extends React.Component {
     let homeLinks = []
     for (let i=0; i < this.state.response.length; i++) {
       let [url, home_address, img_link] = this.state.response[i]
-      homeLinks.push(<span key={this.getKey()} className="home-links">
+      homeLinks.push(<a href={url} target="_blank" className="home-href"><span key={this.getKey()} className="home-links">
         {img_link !== "" ? (<img className="home-preview" src={img_link}></img>) : (<span className="home-preview-icon"><ImHome /></span>)}
-        <a href={url} target="_blank" className="home-href">{home_address}</a></span>)
+        {home_address}</span></a>)
     }
 
     return homeLinks
