@@ -1,0 +1,55 @@
+
+Building Blocks:
+
+  FLASK::
+    ☐ Notifier
+      ☐ Notifier ABC
+      ☐ Notifier Engine
+      ☐ Notifier Factory
+    ☐ Scraper
+      ☐ Scrape Parser
+      ☐ Scraper ABC
+      ☐ Scraper Factory
+    ☐ Configuration Manager
+      ☐ Config Class
+    ☐ Debugging
+      ☐ Logger
+    ☐ Web Driver
+      ☐ Driver ABC
+      ☐ BS4
+      ☐ Requests?
+      ☐ Selenium?
+    ☐ Engine 
+      ☐ Engine Class
+        ☐ Controls timing requests and oversight
+        ☐ Processes and feeds results
+    ☐ Discord
+      ☐ Bot communication for feeding new homes that fit criteria
+      ☐ Ability to save these homes if user wishes to do so
+      ☐ Ability to email the homes as well
+  
+  REACT::
+    ✔ Main React Components @done(22-01-16 03:45)
+      ☐ Homes Display 
+      ☐ Filter Tuning 
+      ☐ Login/Logout
+      ☐ Saved Homes / Favorites Display
+      ☐ Discord Customization Control Box
+  
+  POSTGRES::  
+    ☐ Tables
+      ☐ Favorites
+      ☐ Declined Homes
+      ☐ Configuration Settings
+      ☐ User account information
+
+High Level First Features:
+  ☐ Ability to expand and view more pictures from home page without going to another site
+  ☐ Filtering Homes by Parsing Webpage
+  ☐ Login/Logout
+    ☐ Persistent Account Details
+  ☐ Saved addresses/homes
+    ☐ Also ability to see if they went pending/contingent/are off the market
+    
+
+Archive:
