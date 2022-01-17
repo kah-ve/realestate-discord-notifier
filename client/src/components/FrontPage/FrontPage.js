@@ -1,14 +1,16 @@
 import React from "react";
 import "./FrontPage.css";
 import { IoMdTrash } from "react-icons/io";
-import "../RealEstate/HomeData";
-import HomeData from "../RealEstate/HomeData";
+import "../Homes/HomeData";
+import HomeData from "../Homes/HomeData";
 
 async function sleep(ms) {
   await new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
+
+
 class FrontPage extends React.Component {
   constructor(props) {
     super(props);

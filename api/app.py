@@ -9,8 +9,6 @@ logger = get_logger()
 
 
 app = Flask(__name__)
-CORS(app, support_credentials=True)
-app.config["CORS_HEADERS"] = "Content-Type"
 
 
 @app.route("/api/gethomes", methods=["GET"])
