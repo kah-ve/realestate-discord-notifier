@@ -157,6 +157,7 @@ class FilterHomes extends React.Component {
       <div className="filter-homes">
         <RefreshBox name="Refresh" onClick={() => window.location.reload()}/>
         <InputBox type="text" name="Zipcode" handleChange={this.props.handleChange}/>
+        <PriceRange handleChange={this.props.handleChange}/>
       </div>
     );
   }
@@ -190,6 +191,64 @@ class InputBox extends React.Component {
     );
   }
 }
+
+
+class PriceRange extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.name = props.name || "Price Range";
+
+    this.state = {
+      "low": "0",
+      "high": "500000"
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(evt) {
+    const value = evt.target.value;
+    const targetName = evt.target.name.toLowerCase();
+
+    console.log(targetName)
+    console.log(value)
+
+    this.setState({[targetName]: value})
+  }
+ 
+  render() {
+    return (
+      <div className="inputBoxes">
+            Price Range
+          <div className="price-range-sel-container">
+            <span className="price-label">Low</span>
+            <span className="range-value">{this.state.low}</span>
+            <input
+              className="price-range-sel-input"
+              onChange={this.handleChange}
+              type="range"
+              min="1"
+              max="500000"
+              name="Low"
+              value={this.state.low}
+            />
+            <span className="price-label">High</span>
+            <span className="range-value">{this.state.high}</span>
+            <input
+              className="price-range-sel-input"
+              onChange={this.handleChange}
+              type="range"
+              min="1"
+              max="500000"
+              name="High"
+              value={this.state.high}
+            />
+          </div>
+      </div>
+    );
+  }
+}
+
 
 class RefreshBox extends React.Component {
   constructor(props) {

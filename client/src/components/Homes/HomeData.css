@@ -87,3 +87,37 @@
 .refreshButton {
     cursor: pointer !important;
 }
+
+.price-range-sel-container {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.price-range-sel-input {
+    width: 330px;
+    height: 20px;
+    margin: 5px;
+    overflow: hidden;
+    background-color: green;
+}
+
+
+.range-value {
+    width: 75px;
+    height: 40px;
+    background: black;
+    outline: none;
+    border-radius: 15px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.price-label {
+    font-size: 20px;
+    color: yellow;
+    margin: 5px;
+}
