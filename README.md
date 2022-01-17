@@ -1,6 +1,5 @@
 # Real Estate Notifier w/ Discord (Work in Progress)
-![Preliminary Image of App](https://github.com/kah-ve/realestate-discord-notifier/blob/master/assets/ExploreRealEstate.png
-)
+![Preliminary Image of App](https://github.com/kah-ve/realestate-discord-notifier/blob/dd0ff978264b7ac8efb59a082bb80dd28b635183/assets/ExploreRealEstate.png)
 
 Building a Real Estate Notifier that scrapes websites and presents results through a react frontend which communicates with a flask server hooked up to a postgresql db. 
 
