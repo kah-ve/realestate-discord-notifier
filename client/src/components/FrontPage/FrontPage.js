@@ -10,7 +10,6 @@ async function sleep(ms) {
   });
 }
 
-
 class FrontPage extends React.Component {
   constructor(props) {
     super(props);

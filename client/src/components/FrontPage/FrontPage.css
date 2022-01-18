@@ -6,8 +6,9 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  font-family: "Koho", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "Koho", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   min-width: min-content;
+  min-height: 2000px;
 }
 
 #root {

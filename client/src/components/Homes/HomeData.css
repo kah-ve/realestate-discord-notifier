@@ -1,123 +1,146 @@
-
 .get-homes-container {
-    background-color: #437a97;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 5px;
-    color: #ffffff;
-    text-decoration: none;
-    text-align: left;
-    border: 2px solid #4c97c0;
-    cursor: pointer;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 950px;
-    font-weight: bold;
-    font-size: larger;
-    word-wrap: break-word;    
-}
-  
-.get-homes-container:hover {
-    background-color: #dfdddd;
-    color: #437a97;
+  background-color: #437a97;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: left;
+  border: 2px solid #4c97c0;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1300px;
+  font-weight: bold;
+  font-size: larger;
+  word-wrap: break-word;
 }
 
 .home-links {
-    background-color: #ffffff;
-    color: black;
-    margin: 5px;
-    border-radius: 5px;
-    padding: 10px;
-    min-width: 440px;
-    max-width: 440px;
-    display: flex;
-    align-items: center;
+  background-color: #ffffff;
+  color: black;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 440px;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.home-info-display {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: #747474;
+  color: #ffffff;
+}
+
+.home-info-display:hover {
+  background-color: #aaaaaa;
 }
 
 .home-links:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .home-href {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .home-preview {
-    /* width: 100px; */
-    /* height: 100px; */
-    width: 30%;
-    border-radius: 5px;
-    margin-right: 10px;
+  /* width: 100px; */
+  /* height: 100px; */
+  width: 30%;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .home-preview-icon {
-    background-color: rgb(201, 201, 201);
-    font-size: 70px;
-    width: 132px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    margin-right: 10px;
+  background-color: rgb(201, 201, 201);
+  font-size: 70px;
+  width: 132px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .zipcode-search-and-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
 .error-message-input {
-    color: red;
-    font-weight: bold;
-    margin-top: -30px;
+  color: red;
+  font-weight: bold;
+  margin-top: -30px;
 }
 
 .filter-homes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .refreshButton {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
-.price-range-sel-container {
-    font-size: 15px;
-    display: flex;
-    flex-direction: column;
-
+.price-slider-container {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
-.price-range-sel-input {
-    width: 330px;
-    height: 20px;
-    margin: 5px;
-    overflow: hidden;
-    background-color: green;
+.price-slider {
+  width: 330px;
+  margin: 5px;
+  /* color: red;
+    background-color: red;
+    background: #ff1234; */
 }
-
 
 .range-value {
-    width: 75px;
-    height: 40px;
-    background: black;
-    outline: none;
-    border-radius: 15px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 75px;
+  height: 40px;
+  background: black;
+  outline: none;
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
-  
+
 .price-label {
-    font-size: 20px;
-    color: yellow;
-    margin: 5px;
+  font-size: 20px;
+  color: #ffdd1d;
+  margin: 5px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 5px;
+  background: rgb(0, 0, 0);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: rgb(0, 255, 221);
+  margin-top: -6px;
 }

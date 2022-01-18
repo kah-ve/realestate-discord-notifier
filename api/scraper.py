@@ -1,4 +1,5 @@
 import logging
+from xml.dom.minidom import Element
 from bs4.element import PageElement
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium import webdriver
@@ -21,7 +22,7 @@ import random
 import calendar
 from typing import Dict, List, Tuple
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as bs
 import numpy as np
 import pandas as pd
 import regex as re
@@ -56,20 +57,26 @@ class Scraper:
 
 def get_site_urls(zipcode: str):
     req_headers = {
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
         "accept-encoding": "gzip, deflate, br",
-        "accept-language": "en-US,en;q=0.8",
+        "accept-language": "en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7",
         "upgrade-insecure-requests": "1",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",
     }
 
-    with requests.Session() as s:
-        # city = "philadelphia/"  # *****change this city to what you want*****
-        # url = "https://www.zillow.com/homes/for_sale/" + city
-        url = f"https://www.zillow.com/homes/{zipcode}_rb/"
-        r = s.get(url, headers=req_headers)
+    # with requests.Session() as s:
+    #     # city = "philadelphia/"  # *****change this city to what you want*****
+    #     # url = "https://www.zillow.com/homes/for_sale/" + city
+    #     url = f"https://www.zillow.com/homes/{zipcode}_rb/"
+    #     r = s.get(url, headers=req_headers)
 
-    soup = BeautifulSoup(r.content, "html.parser")
+    # # with open("soup-example.html", "w") as f:
+    # #      f.write(r.text)
+
+    with open("soup-example.html") as f:
+        soup = bs(f, "html.parser")
+
+    # soup = bs(r.content, "html.parser")
 
     # df = pd.DataFrame()
 
@@ -83,39 +90,34 @@ def get_site_urls(zipcode: str):
     # brokerage = list(soup.find_all(class_="list-card-brokerage list-card-img-overlay", text=True))
     # link = soup.find_all(class_="list-card-link")
 
-    urls = soup.find_all("a", href=True, attrs={"class": "list-card-link"})
+    home_info: List[Dict[str, str]] = []
 
-    seen_urls: Set[str] = set()
-    image_link: Dict[str, str] = {}
+    list_container = soup.find_all("article", class_="list-card")
+    for container in list_container:
+        a = container.find("a", attrs={"class": "list-card-link"})
+        if a:
+            thumbnail_image = container.find("img", attrs={"class": ""})
 
-    for a in urls:
-        url = a["href"]
-        seen_urls.add(url)
+            if thumbnail_image:
+                url = a["href"]
+                src = thumbnail_image.get("src", None)
+                price = container.find("div", attrs={"class": "list-card-price"})
 
-        thumbnail_image = a.find("img")
-        if thumbnail_image:
-            src = thumbnail_image.get("src", None)
-            image_link[url] = src
+                home_info.append({"url": a["href"], "imgLink": src, "price": price.contents[0]})
 
-    # # create dataframe columns out of variables
-    # df["prices"] = price
-    # df["address"] = address
-    # df["beds"] = beds
-
-    return parse_zillow_urls(list(seen_urls), image_link)
+    return parse_zillow_urls(home_info)
 
 
-def parse_zillow_urls(urls: List[str], image_link: Dict[str, str]) -> List[Tuple[str, str, str]]:
+def parse_zillow_urls(home_info: List[Dict[str, str]]) -> List[Dict[str, str]]:
 
-    url_address_img: List[Tuple[str, str, str]] = []
-    for url in urls:
+    for home in home_info:
+        url = home["url"]
         find_address = re.findall(r"homedetails/([\w_-]+)/\d+", url)
         clean_address = re.sub("-", " ", find_address[0])
 
-        # print(f"IMG Link for URL {url} is {image_link.get(url, 'Not found url')}")
-        url_address_img.append((url, clean_address, image_link.get(url, "")))
+        home["address"] = clean_address
 
-    return url_address_img
+    return home_info
 
 
 def selenium_get_site_data(url_to_open: str = ""):
