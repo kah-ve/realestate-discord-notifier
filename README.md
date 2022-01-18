@@ -1,28 +1,30 @@
 # Real Estate Notifier w/ Discord (Work in Progress)
-![Preliminary Image of App](https://github.com/kah-ve/realestate-discord-notifier/blob/dd0ff978264b7ac8efb59a082bb80dd28b635183/assets/ExploreRealEstate.png)
 
-Building a Real Estate Notifier that scrapes websites and presents results through a react frontend which communicates with a flask server hooked up to a postgresql db. 
+![Preliminary Image of App](https://github.com/kah-ve/realestate-discord-notifier/assets/ExploreRealEstate.png)
+
+Building a Real Estate Notifier that scrapes websites and presents results through a react frontend which communicates with a flask server hooked up to a postgresql db.
 
 ### My purposes with this app:
+
 Practice design principles and best practices that catch my eye (such as oop, python typing, design patterns, decorators, factories). Think about architecture of code more and the whole system from frontend -> backend -> db, including familiarizing myself further with react & postgres.
 
 ### Usage Goal
+
 3. Having a simple and interesting interaction between the app and discord to allow for real-time notifications and control such as favoriting a new home or removing it from your watchlist
 4. Building a react frontend to display favorites and other homes that you have combed through. Also having the ability to list out features and do more finely tuned filtering that websites would not provide.
 5. Buy a home?!
 
 ### How
+
 Frontend: React -> Will display homes already saved, will be able to list homes together and apply finely tuned filtering
 Backend: Flask -> Will handle scraping, parsing, sql queries, working with discord, etc
 Database: Postgresql -> Retains persistent data regarding homes that were liked, filter settings, etc
-
 
 ## Documentation on running this repo
 
 All you need to do to run this is fork then clone and build with
 
       docker-compose build
-
 
 then run with
 
