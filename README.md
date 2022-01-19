@@ -10,9 +10,9 @@ Practice design principles and best practices that catch my eye (such as oop, py
 
 ### Usage Goal
 
-3. Having a simple and interesting interaction between the app and discord to allow for real-time notifications and control such as favoriting a new home or removing it from your watchlist
-4. Building a react frontend to display favorites and other homes that you have combed through. Also having the ability to list out features and do more finely tuned filtering that websites would not provide.
-5. Buy a home?!
+1. Having a simple and interesting interaction between the app and discord to allow for real-time notifications and control such as favoriting a new home or removing it from your watchlist
+2. Building a react frontend to display favorites and other homes that you have combed through. Also having the ability to list out features and do more finely tuned filtering that websites would not provide.
+3. Buy a home?!
 
 ### How
 
