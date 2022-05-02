@@ -4,6 +4,8 @@
 
 Building a Real Estate Notifier that scrapes websites and presents results through a react frontend which communicates with a flask server hooked up to a postgresql db.
 
+Update: I've stopped working on this for now in lieu of another private project.
+
 ### My purposes with this app:
 
 Practice design principles and best practices that catch my eye (such as oop, python typing, design patterns, decorators, factories). Think about architecture of code more and the whole system from frontend -> backend -> db, including familiarizing myself further with react & postgres.
